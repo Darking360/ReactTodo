@@ -21,7 +21,12 @@ module.exports = {
   },
   resolve: {
     alias: {
-      Main: path.resolve(__dirname,'app/components/Main.jsx')
+      Main: path.resolve(__dirname,'app/components/Main.jsx'),
+      Todo: path.resolve(__dirname,'app/components/Todo.jsx'),
+      TodoApp: path.resolve(__dirname,'app/components/TodoApp.jsx'),
+      TodoForm: path.resolve(__dirname,'app/components/TodoForm.jsx'),
+      TodoList: path.resolve(__dirname,'app/components/TodoList.jsx'),
+      TodoSearch: path.resolve(__dirname,'app/components/TodoSearch.jsx')
     },
     extensions: ['.js','.jsx'],
   },

@@ -3,9 +3,11 @@ import React from 'react'
 class Main extends React.Component {
   render(){
     return(
-      <h3>¡Boilerplate ready to go!</h3>
+      <div>
+        {this.props.children}
+      </div>    
     );
   }
 };
 
-module.exports = Main;
+export default Main;
