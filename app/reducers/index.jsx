@@ -19,6 +19,11 @@ export var showCompleteReducer = (state = false, action) => {
 
 export var todosReducer = (state = [], action) => {
   switch(action.type){
+    case "ADD_TODOS":
+      return[
+        ...state,
+        ...action.todos
+      ];
     case "ADD_TODO":
       return[
         ...state,
@@ -30,13 +35,13 @@ export var todosReducer = (state = [], action) => {
       ];
     case "TOGGLE_TODO":
       return [
-        state.filter((todo) => {
-          if(todo.id == action.id){
-            todo.completed = !todo.completed;
-          };
-          return true;
-        })
-      ]
+      ...state.map((todo) => {
+        if(todo.id == action.id){
+          todo.completed = !todo.completed;
+        }
+        return todo;
+      })
+    ]
     default:
       return state;
   };

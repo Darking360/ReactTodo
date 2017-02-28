@@ -1,5 +1,7 @@
 import React from 'react'
-import uuid from 'node-uuid'
+
+var actions = require("Actions");
+var {connect} = require("react-redux");
 
 class TodoForm extends React.Component {
   constructor(props){
@@ -8,13 +10,8 @@ class TodoForm extends React.Component {
   }
   submitTodo(e){
     e.preventDefault();
-    var todo = {
-      text: this.refs.text.value,
-      id: uuid(),
-      completed: false
-    };
+    this.props.dispatch(actions.addTodo(this.refs.text.value));
     this.refs.text.value = "";
-    this.props.submitTodo(todo);
   }
   render(){
     return(
@@ -32,4 +29,10 @@ class TodoForm extends React.Component {
   }
 };
 
-export default TodoForm;
+export default connect(
+  (state) => {
+    return {
+      todos: state.todos
+    }
+  }
+)(TodoForm);
