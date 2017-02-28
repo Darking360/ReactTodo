@@ -26,7 +26,10 @@ module.exports = {
       TodoApp: path.resolve(__dirname,'app/components/TodoApp.jsx'),
       TodoForm: path.resolve(__dirname,'app/components/TodoForm.jsx'),
       TodoList: path.resolve(__dirname,'app/components/TodoList.jsx'),
-      TodoSearch: path.resolve(__dirname,'app/components/TodoSearch.jsx')
+      TodoSearch: path.resolve(__dirname,'app/components/TodoSearch.jsx'),
+      Actions: path.resolve(__dirname,'app/actions/index.jsx'),
+      Reducers: path.resolve(__dirname,'app/reducers/index.jsx'),
+      Store: path.resolve(__dirname,'app/store/configStore.jsx')
     },
     extensions: ['.js','.jsx'],
   },
